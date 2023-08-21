@@ -3,6 +3,7 @@
 from flask import Flask, request
 import telegram
 from telebot.credentials import bot_token, bot_user_name,URL
+from telebot.bot_engine import generate_reply
 global bot
 global TOKEN
 TOKEN = bot_token
@@ -39,6 +40,7 @@ def respond():
            text = re.sub(r"\W", "_", text)
            # integrate model to chat bot 
            #reply comes as "reply_message"
+           reply_message=generate_reply(text)
            bot.sendMessage(chat_id=chat_id, text=reply_message , reply_to_message_id=msg_id)
            
        except Exception:
