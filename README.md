@@ -4,19 +4,18 @@ Tasks include integrating sentiment analysis, developing response templates for 
 By offering emotional support and fostering meaningful dialogue, the chatbot significantly enhances users' mental well-being and engagement.
 
 
-steps to be taken
-Gather diverse conversational data.
-Preprocess and tokenize the data.
-Choose sentiment analysis model.
-Label data for emotions.
+steps to be taken:
+Gather diverse conversational data.                     -check
+Preprocess and tokenize the data.                       -check
+Choose sentiment analysis model.                        
+Label data for emotions.                                -check                    
 Train sentiment analysis model.
-Select a chatbot framework.
+Select a chatbot framework.                             -check
 Define intents and entities.
 Create response templates.
-Integrate sentiment analysis into the chatbot.
+Integrate sentiment analysis into the chatbot.          -check
 Process user input for emotions.
 Determine emotion and select response.
-Implement natural language generation.
 Test chatbot responses and accuracy.
 Gather user feedback for improvements.
 Deploy chatbot and monitor interactions.

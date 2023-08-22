@@ -1,0 +1,11 @@
+python LIBRARIES:
+- flask
+- mathplotlib
+- pandas
+- numpy 
+- re
+- seaborn as sns
+- mathplotlib
+- nltk
+- textblob
+

@@ -2,8 +2,8 @@
 
 from flask import Flask, request
 import telegram
-from telebot.credentials import bot_token, bot_user_name,URL
-from telebot.bot_engine import generate_reply
+from telegram_bot_creation.credentials import bot_token, bot_user_name,URL
+from nlp_pipeline.response_creation import generate_reply
 global bot
 global TOKEN
 TOKEN = bot_token
