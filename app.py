@@ -91,7 +91,7 @@ async def handle_message (update: Update, context: ContextTypes.DEFAULT_TYPE):
              new_text: str = text.replace(bot_user_name, '').strip()
              response: str = respond (new_text)
          else:
-             return
+             return 
     else:
          response: str = respond(text)
     print('Bot:', response)
