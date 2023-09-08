@@ -5,8 +5,8 @@ import re
 import seaborn as sns
 import matplotlib.pyplot as plt
 plt.style.use('ggplot')
-!pip install datasets
-!pip install transformers
+# !pip install datasets
+# !pip install transformers
 import tensorflow as tf
 from transformers import TFAutoModel, AutoTokenizer
 from datasets import load_dataset

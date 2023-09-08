@@ -2,6 +2,7 @@
 
 from flask import Flask, request
 import telegram
+import regex as re
 from telegram_bot_creation.credentials import bot_token, bot_user_name,URL
 from nlp_pipeline.response_creation import generate_reply
 global bot
@@ -21,7 +22,7 @@ def respond():
    msg_id = update.message.message_id
 
    # Telegram understands UTF-8, so encode text for unicode compatibility
-   text = update.message.text.encode('utf-8').decode()
+   text = update.message.text.encode('utf-8').decode()  #input
    # for debugging purposes only
    print("got text message :", text)
    # the first time you chat with the bot AKA the welcoming message
@@ -37,7 +38,7 @@ def respond():
    else:
        try:
            # clear the message we got from any non alphabets
-           text = re.sub(r"\W", "_", text)
+           text = re.sub(r"\W", "_", text) #input
            # integrate model to chat bot 
            #reply comes as "reply_message"
            reply_message=generate_reply(text)
