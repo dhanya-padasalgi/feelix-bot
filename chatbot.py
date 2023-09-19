@@ -1,20 +1,25 @@
- #------ for the chat bot
+#------ for the chat bot
 
 from flask import Flask, request
 import telegram
 import regex as re
 
-from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
+from telegram.ext import Updater, Application, CommandHandler, MessageHandler, filters, ContextTypes, CallbackContext
+import transformers
+from transformers import pipeline
+import random
+import json
+#from telegram.updates import Update
 global bot
 global TOKEN
 
-bot_token = "add token "
-bot_user_name = "@Feeli_xbot"
+bot_token = "6637119559:AAEDd5pZqj2SlJrNaKvwEMQM6xaNu61xL1I"
+bot_user_name = "@https://t.me/Feeli_xbot"
 TOKEN = bot_token
 bot = telegram.Bot(token=TOKEN)
 
 
-async def start_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def start_command(update: Updater, context: CallbackContext):
     await update.message.reply_text("hello i am feelix")
 
 
@@ -35,23 +40,21 @@ def reply_message(text):
     else:
         return("sorry could not process text")
 
-async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPES):
+async def handle_message(update: Updater, context: CallbackContext):
     text = update.message.text
     response = reply_message(text)
     await update.message.reply_text(response)
     
 
-async def error(update: Update, context: ContextTypes.DEFAULT_TYPES):
+async def error(update: Updater, context: CallbackContext):
     print("error")
 
 
-if __name__=='__main__':
+if _name=='__main_':
     app=Application.builder().token(TOKEN).build()
 
     app.add_handler(CommandHandler('start',start_command))
 
-    app.add_handler(MessageHandler(filters.TEXT, handel_message))
+    app.add_handler(MessageHandler(filters.TEXT, handle_message))
 
     app.run_polling(poll_interval=3)
-
-
